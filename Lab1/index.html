@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ — статья</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header class="top" id="start">
+    <h1>Язык программирования C++</h1>
+    <p class="subtitle">Лабораторная работа №1 &middot; вариант 3</p>
+</header>
+
+<div class="page">
+
+    <nav class="menu">
+        <h2>Содержание</h2>
+        <ul>
+            <li><a href="#part1">1. История создания</a></li>
+            <li><a href="#part2">2. Краткий обзор языка</a></li>
+            <li><a href="#part3">3. Примеры кода</a></li>
+            <li><a href="#part4">4. Список тегов и CSS-свойств</a></li>
+        </ul>
+    </nav>
+
+    <main>
+    <article>
+
+        <!-- ===== Раздел 1 ===== -->
+        <section id="part1">
+            <h2>1. История создания</h2>
+
+            <img class="pic-left" src="images/cpp-logo.svg" alt="Логотип C++" width="140">
+
+            <p>
+                <strong>C++</strong> (читается «си плюс плюс») — компилируемый язык программирования
+                общего назначения. Его создал датский программист <b>Бьёрн Страуструп</b>,
+                который работал в компании <abbr title="American Telephone and Telegraph">AT&amp;T</abbr>
+                Bell Labs.
+            </p>
+            <p>
+                Работа над языком началась в <time datetime="1979">1979</time> году. Страуструпу
+                для диссертации нужен был язык, в котором есть классы как в <i>Simula</i>,
+                но который работает так же быстро, как <i>C</i>. Поэтому сначала язык назывался
+                <mark>«C with Classes»</mark> — «Си с классами».
+            </p>
+            <p>
+                В <time datetime="1983">1983</time> году язык переименовали в C++. Название
+                придумал Рик Маскитти: оператор <code>++</code> в языке C означает увеличение
+                на единицу, то есть C++ — это «следующий шаг после C». Первая книга
+                «Язык программирования C++» вышла в 1985 году.
+            </p>
+
+            <blockquote>
+                <p>«C позволяет легко выстрелить себе в ногу. С C++ это сделать сложнее,
+                    но если получится — отстрелишь всю ногу».</p>
+                <cite>— Бьёрн Страуструп</cite>
+            </blockquote>
+
+            <p>
+                Официальный международный стандарт <abbr title="International Organization for Standardization">ISO</abbr>
+                появился только в 1998 году. После этого язык продолжает развиваться, и новая
+                версия стандарта выходит примерно раз в три года.
+            </p>
+
+            <table class="versions">
+                <caption>Таблица 1. Стандарты языка C++</caption>
+                <thead>
+                    <tr>
+                        <th>Год</th>
+                        <th>Стандарт</th>
+                        <th>Главные нововведения</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1998</td>
+                        <td>C++98</td>
+                        <td>Первый стандарт, библиотека STL</td>
+                    </tr>
+                    <tr>
+                        <td>2003</td>
+                        <td>C++03</td>
+                        <td>Исправление ошибок стандарта</td>
+                    </tr>
+                    <tr>
+                        <td>2011</td>
+                        <td>C++11</td>
+                        <td><code>auto</code>, лямбда-функции, умные указатели</td>
+                    </tr>
+                    <tr>
+                        <td>2014</td>
+                        <td>C++14</td>
+                        <td>Небольшие улучшения C++11</td>
+                    </tr>
+                    <tr>
+                        <td>2017</td>
+                        <td>C++17</td>
+                        <td><code>std::optional</code>, файловая система</td>
+                    </tr>
+                    <tr>
+                        <td>2020</td>
+                        <td>C++20</td>
+                        <td>Концепты, модули, корутины</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>C++23</td>
+                        <td><code>std::print</code>, <code>std::expected</code></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Источник: Википедия</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <p class="back"><a href="#start">Наверх &uarr;</a></p>
+        </section>
+
+        <!-- ===== Раздел 2 ===== -->
+        <section id="part2">
+            <h2>2. Краткий обзор языка</h2>
+
+            <img class="pic-right" src="images/classes.svg" alt="Схема наследования классов" width="170">
+
+            <p>
+                C++ поддерживает несколько стилей программирования: процедурный,
+                <em>объектно-ориентированный</em> и обобщённый (шаблоны). Программа на C++
+                сначала переводится компилятором в машинный код, поэтому она работает очень быстро.
+            </p>
+            <p>
+                На C++ пишут операционные системы, игры и игровые движки, браузеры,
+                программы для микроконтроллеров. Например, на нём написаны
+                <a href="https://www.unrealengine.com/" target="_blank">Unreal Engine</a> и большая
+                часть браузера <a href="https://www.google.com/chrome/" target="_blank">Google Chrome</a>.
+            </p>
+
+            <h3>Основные возможности</h3>
+            <ol>
+                <li>Классы и объекты</li>
+                <li>Наследование и полиморфизм</li>
+                <li>Шаблоны функций и классов</li>
+                <li>Перегрузка операторов</li>
+                <li>Ручное управление памятью (<code>new</code> и <code>delete</code>)</li>
+            </ol>
+
+            <h3>Популярные компиляторы</h3>
+            <ul class="dots">
+                <li>GCC (g++)</li>
+                <li>Clang</li>
+                <li>Microsoft Visual C++</li>
+                <li>Intel C++ Compiler</li>
+            </ul>
+
+            <h3>Основные типы данных</h3>
+            <ul class="arrows">
+                <li><code>int</code> — целое число</li>
+                <li><code>double</code> — число с плавающей точкой</li>
+                <li><code>char</code> — один символ</li>
+                <li><code>bool</code> — логическое значение</li>
+                <li><code>std::string</code> — строка</li>
+            </ul>
+
+            <figure class="pic-center">
+                <img src="images/compiler.svg" alt="Схема компиляции" width="420">
+                <figcaption>Рисунок 3. Из исходного файла компилятор делает исполняемый файл</figcaption>
+            </figure>
+
+            <dl>
+                <dt>Компилятор</dt>
+                <dd>Программа, которая переводит текст программы в машинный код.</dd>
+                <dt>STL</dt>
+                <dd>Стандартная библиотека шаблонов: контейнеры, алгоритмы, итераторы.</dd>
+            </dl>
+
+            <p>
+                Размер типа <var>int</var> обычно 4 байта, поэтому он хранит числа примерно
+                до 2<sup>31</sup>. Чтобы скомпилировать программу в Visual Studio, можно нажать
+                <kbd>Ctrl</kbd> + <kbd>F5</kbd>. Примеры программ смотрите в
+                <a href="#part3">разделе 3</a>. Больше информации —
+                <a href="https://ru.wikipedia.org/wiki/C%2B%2B" target="_blank">на Википедии</a>.
+            </p>
+
+            <p class="back"><a href="#start">Наверх &uarr;</a></p>
+        </section>
+
+        <!-- ===== Раздел 3 ===== -->
+        <section id="part3">
+            <h2>3. Примеры кода</h2>
+
+            <h3>Пример 1. Hello, World!</h3>
+<pre class="code"><code><span class="pre">#include</span> <span class="str">&lt;iostream&gt;</span>
+
+<span class="type">int</span> <span class="func">main</span>() {
+    std::cout &lt;&lt; <span class="str">"Hello, World!"</span> &lt;&lt; std::endl;
+    <span class="key">return</span> <span class="num">0</span>;
+}</code></pre>
+
+            <h3>Пример 2. Цикл и условие</h3>
+<pre class="code"><code><span class="comment">// выводим чётные числа от 1 до 10</span>
+<span class="key">for</span> (<span class="type">int</span> i = <span class="num">1</span>; i &lt;= <span class="num">10</span>; i++) {
+    <span class="key">if</span> (i % <span class="num">2</span> == <span class="num">0</span>) {
+        std::cout &lt;&lt; i &lt;&lt; <span class="str">" "</span>;
+    }
+}</code></pre>
+
+            <h3>Пример 3. Класс</h3>
+<pre class="code"><code><span class="key">class</span> <span class="type">Student</span> {
+<span class="key">public</span>:
+    std::<span class="type">string</span> name;
+    <span class="type">int</span> age;
+
+    <span class="type">void</span> <span class="func">print</span>() {
+        std::cout &lt;&lt; name &lt;&lt; <span class="str">", "</span> &lt;&lt; age &lt;&lt; std::endl;
+    }
+};
+
+<span class="type">Student</span> s;
+s.name = <span class="str">"Султан"</span>;
+s.age = <span class="num">19</span>;
+s.<span class="func">print</span>();</code></pre>
+
+            <h3>Пример 4. Вектор</h3>
+<pre class="code"><code><span class="pre">#include</span> <span class="str">&lt;vector&gt;</span>
+
+std::<span class="type">vector</span>&lt;<span class="type">int</span>&gt; v = {<span class="num">5</span>, <span class="num">3</span>, <span class="num">8</span>};
+v.<span class="func">push_back</span>(<span class="num">1</span>);       <span class="comment">// добавить в конец</span>
+<span class="type">int</span> sum = <span class="num">0</span>;
+<span class="key">for</span> (<span class="type">int</span> x : v) {
+    sum += x;
+}</code></pre>
+
+            <p>Вывод программы из примера 2: <samp>2 4 6 8 10</samp></p>
+
+            <p class="back"><a href="#start">Наверх &uarr;</a></p>
+        </section>
+
+        <hr>
+
+        <!-- ===== Раздел 4 ===== -->
+        <section id="part4">
+            <h2>4. Использованные теги и CSS-свойства</h2>
+
+            <h3>HTML-теги (54)</h3>
+            <ul class="list-used">
+                <li><code>&lt;a&gt;</code></li>
+                <li><code>&lt;abbr&gt;</code></li>
+                <li><code>&lt;address&gt;</code></li>
+                <li><code>&lt;article&gt;</code></li>
+                <li><code>&lt;b&gt;</code></li>
+                <li><code>&lt;blockquote&gt;</code></li>
+                <li><code>&lt;body&gt;</code></li>
+                <li><code>&lt;caption&gt;</code></li>
+                <li><code>&lt;cite&gt;</code></li>
+                <li><code>&lt;code&gt;</code></li>
+                <li><code>&lt;dd&gt;</code></li>
+                <li><code>&lt;div&gt;</code></li>
+                <li><code>&lt;dl&gt;</code></li>
+                <li><code>&lt;dt&gt;</code></li>
+                <li><code>&lt;em&gt;</code></li>
+                <li><code>&lt;figcaption&gt;</code></li>
+                <li><code>&lt;figure&gt;</code></li>
+                <li><code>&lt;footer&gt;</code></li>
+                <li><code>&lt;h1&gt;</code></li>
+                <li><code>&lt;h2&gt;</code></li>
+                <li><code>&lt;h3&gt;</code></li>
+                <li><code>&lt;head&gt;</code></li>
+                <li><code>&lt;header&gt;</code></li>
+                <li><code>&lt;hr&gt;</code></li>
+                <li><code>&lt;html&gt;</code></li>
+                <li><code>&lt;i&gt;</code></li>
+                <li><code>&lt;img&gt;</code></li>
+                <li><code>&lt;kbd&gt;</code></li>
+                <li><code>&lt;li&gt;</code></li>
+                <li><code>&lt;link&gt;</code></li>
+                <li><code>&lt;main&gt;</code></li>
+                <li><code>&lt;mark&gt;</code></li>
+                <li><code>&lt;meta&gt;</code></li>
+                <li><code>&lt;nav&gt;</code></li>
+                <li><code>&lt;ol&gt;</code></li>
+                <li><code>&lt;p&gt;</code></li>
+                <li><code>&lt;pre&gt;</code></li>
+                <li><code>&lt;samp&gt;</code></li>
+                <li><code>&lt;section&gt;</code></li>
+                <li><code>&lt;small&gt;</code></li>
+                <li><code>&lt;span&gt;</code></li>
+                <li><code>&lt;strong&gt;</code></li>
+                <li><code>&lt;sup&gt;</code></li>
+                <li><code>&lt;table&gt;</code></li>
+                <li><code>&lt;tbody&gt;</code></li>
+                <li><code>&lt;td&gt;</code></li>
+                <li><code>&lt;tfoot&gt;</code></li>
+                <li><code>&lt;th&gt;</code></li>
+                <li><code>&lt;thead&gt;</code></li>
+                <li><code>&lt;time&gt;</code></li>
+                <li><code>&lt;title&gt;</code></li>
+                <li><code>&lt;tr&gt;</code></li>
+                <li><code>&lt;ul&gt;</code></li>
+                <li><code>&lt;var&gt;</code></li>
+            </ul>
+
+            <h3>CSS-свойства (42)</h3>
+            <ul class="list-used">
+                <li><code>background-color</code></li>
+                <li><code>border</code></li>
+                <li><code>border-bottom</code></li>
+                <li><code>border-collapse</code></li>
+                <li><code>border-left</code></li>
+                <li><code>border-radius</code></li>
+                <li><code>box-shadow</code></li>
+                <li><code>caption-side</code></li>
+                <li><code>clear</code></li>
+                <li><code>color</code></li>
+                <li><code>column-count</code></li>
+                <li><code>display</code></li>
+                <li><code>float</code></li>
+                <li><code>font-family</code></li>
+                <li><code>font-size</code></li>
+                <li><code>font-style</code></li>
+                <li><code>font-weight</code></li>
+                <li><code>height</code></li>
+                <li><code>letter-spacing</code></li>
+                <li><code>line-height</code></li>
+                <li><code>list-style</code></li>
+                <li><code>list-style-image</code></li>
+                <li><code>list-style-type</code></li>
+                <li><code>margin</code></li>
+                <li><code>margin-bottom</code></li>
+                <li><code>margin-left</code></li>
+                <li><code>margin-top</code></li>
+                <li><code>max-width</code></li>
+                <li><code>opacity</code></li>
+                <li><code>overflow</code></li>
+                <li><code>overflow-x</code></li>
+                <li><code>padding</code></li>
+                <li><code>padding-bottom</code></li>
+                <li><code>padding-left</code></li>
+                <li><code>text-align</code></li>
+                <li><code>text-decoration</code></li>
+                <li><code>text-indent</code></li>
+                <li><code>text-transform</code></li>
+                <li><code>vertical-align</code></li>
+                <li><code>white-space</code></li>
+                <li><code>width</code></li>
+                <li><code>word-spacing</code></li>
+            </ul>
+
+            <p class="back"><a href="#start">Наверх &uarr;</a></p>
+        </section>
+
+    </article>
+    </main>
+
+</div>
+
+<footer class="bottom">
+    <p><small>&copy; 2026, студент Султан. Статья написана по материалам Википедии.</small></p>
+    <address>GitHub: <a href="https://github.com/Sultan013-gif" target="_blank">Sultan013-gif</a></address>
+</footer>
+
+</body>
+</html>

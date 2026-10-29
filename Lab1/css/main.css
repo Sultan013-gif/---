@@ -1,0 +1,274 @@
+/* Шрифт для заголовков подключаем из папки fonts */
+@font-face {
+    font-family: "RubikMono";
+    src: url("../fonts/RubikMonoOne-Regular.ttf") format("truetype");
+}
+
+/* ===== Общие стили ===== */
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #2b2b2b;
+    background-color: #f4f1ea;
+}
+
+h1, h2 {
+    font-family: "RubikMono", Arial, sans-serif;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #00599c;
+    border-bottom: 3px double #659ad2;
+    padding-bottom: 6px;
+}
+
+h3 {
+    font-size: 15px;
+    font-style: italic;
+    color: #444;
+}
+
+a {
+    color: #00599c;
+}
+
+a:hover {
+    color: #c0392b;
+    text-decoration: none;
+}
+
+/* ===== Шапка ===== */
+.top {
+    background-color: #00599c;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.subtitle {
+    margin: 8px 0 0;
+    opacity: 0.8;
+    text-transform: uppercase;
+    font-size: 12px;
+    word-spacing: 4px;
+}
+
+/* ===== Основной блок ===== */
+.page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Содержание */
+.menu {
+    background-color: #ffffff;
+    border-left: 6px solid #00599c;
+    padding: 5px 20px 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.menu ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.menu li {
+    margin-bottom: 4px;
+}
+
+section {
+    overflow: hidden; /* чтобы картинки с float не вылезали за раздел */
+}
+
+p {
+    text-align: justify;
+    text-indent: 25px;
+}
+
+/* ===== Картинки ===== */
+.pic-left {
+    float: left;
+    margin: 0 20px 10px 0;
+}
+
+.pic-right {
+    float: right;
+    margin: 0 0 10px 20px;
+}
+
+.pic-center {
+    clear: both;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pic-center img {
+    max-width: 100%;
+    height: auto;
+}
+
+figcaption {
+    font-size: 12px;
+    color: #777;
+}
+
+/* ===== Цитата ===== */
+blockquote {
+    background-color: #fff8e1;
+    border-left: 4px solid #f0b400;
+    margin: 15px 0;
+    padding: 10px 20px;
+    font-style: italic;
+}
+
+cite {
+    display: block;
+    text-align: right;
+}
+
+/* ===== Таблица ===== */
+.versions {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    margin-top: 15px;
+}
+
+.versions caption {
+    caption-side: top;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.versions th {
+    background-color: #659ad2;
+    color: #ffffff;
+}
+
+.versions th,
+.versions td {
+    border: 1px solid #b0c4de;
+    padding: 6px 10px;
+    vertical-align: top;
+}
+
+.versions tbody tr:nth-child(even) {
+    background-color: #eef4fb;
+}
+
+.versions tfoot td {
+    font-size: 12px;
+    color: #888;
+    text-align: right;
+}
+
+/* ===== Списки ===== */
+ol {
+    list-style-type: upper-roman;
+}
+
+.dots {
+    list-style-type: disc;
+}
+
+.arrows {
+    list-style-image: url("../images/arrow.svg");
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-left: 30px;
+    margin-bottom: 8px;
+}
+
+/* ===== Мелкие элементы текста ===== */
+code {
+    font-family: Consolas, "Courier New", monospace;
+    background-color: #e8e4da;
+    padding: 1px 4px;
+    border-radius: 3px;
+}
+
+kbd {
+    border: 1px solid #999;
+    border-radius: 4px;
+    padding: 0 5px;
+    background-color: #ffffff;
+}
+
+mark {
+    background-color: #ffe082;
+}
+
+/* ===== Код с подсветкой (как тема Dark+ в VS Code) ===== */
+.code {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+.code code {
+    background-color: transparent;
+    padding: 0;
+}
+
+.key     { color: #c586c0; } /* ключевые слова */
+.type    { color: #4ec9b0; } /* типы */
+.func    { color: #dcdcaa; } /* функции */
+.str     { color: #ce9178; } /* строки */
+.num     { color: #b5cea8; } /* числа */
+.comment { color: #6a9955; } /* комментарии */
+.pre     { color: #569cd6; } /* #include */
+
+.back {
+    text-align: right;
+    text-indent: 0;
+}
+
+/* Список тегов и свойств в конце */
+.list-used {
+    list-style: none;
+    padding-left: 0;
+    text-indent: 0;
+    column-count: 4;
+    font-family: Consolas, monospace;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #659ad2;
+    margin: 30px 0;
+}
+
+/* ===== Подвал ===== */
+.bottom {
+    background-color: #2b2b2b;
+    color: #cccccc;
+    text-align: center;
+    padding: 15px;
+}
+
+.bottom a {
+    color: #8fc1f0;
+}
+
+address {
+    font-style: normal;
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="120" viewBox="0 0 420 120">
+  <rect x="5" y="30" width="110" height="60" rx="8" fill="#fff4d6" stroke="#b8860b" stroke-width="2"/>
+  <text x="60" y="66" font-family="Arial" font-size="15" text-anchor="middle" fill="#333">main.cpp</text>
+  <line x1="115" y1="60" x2="150" y2="60" stroke="#333" stroke-width="2"/>
+  <polygon points="150,54 162,60 150,66" fill="#333"/>
+  <rect x="162" y="30" width="110" height="60" rx="8" fill="#00599c"/>
+  <text x="217" y="66" font-family="Arial" font-size="15" text-anchor="middle" fill="#fff">g++</text>
+  <line x1="272" y1="60" x2="300" y2="60" stroke="#333" stroke-width="2"/>
+  <polygon points="300,54 312,60 300,66" fill="#333"/>
+  <rect x="312" y="30" width="100" height="60" rx="8" fill="#d8f0d8" stroke="#2e7d32" stroke-width="2"/>
+  <text x="362" y="66" font-family="Arial" font-size="15" text-anchor="middle" fill="#333">main.exe</text>
+</svg>
