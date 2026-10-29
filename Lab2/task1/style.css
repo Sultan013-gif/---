@@ -1,0 +1,41 @@
+/* Растягиваем страницу на всю высоту окна
+   и ставим блок с цифрами в центр (по горизонтали и вертикали) */
+html {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+/* Цифры стоят в ряд */
+.digits {
+    display: flex;
+}
+
+/* Внутри цифры столбики тоже стоят в ряд */
+.digit {
+    display: flex;
+}
+
+/* Квадратики в столбике идут сверху вниз */
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Один квадратик */
+.fill,
+.empty {
+    width: 45px;
+    height: 45px;
+}
+
+/* Единственный цвет на странице */
+.fill {
+    background-color: #e67e22;
+}
