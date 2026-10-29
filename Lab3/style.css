@@ -1,0 +1,240 @@
+body {
+    margin: 0;
+    padding: 30px 15px;
+    background-color: #e9eef3;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    font-size: 15px;
+    color: #222;
+}
+
+/* Карточка с формой */
+.card {
+    max-width: 820px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-head {
+    background-color: #263238;
+    color: #ffffff;
+    padding: 20px 30px;
+}
+
+.card-head h1 {
+    margin: 0 0 5px;
+    font-size: 26px;
+}
+
+.card-head p {
+    margin: 0;
+    color: #b0bec5;
+}
+
+.card-body {
+    padding: 10px 30px 30px;
+}
+
+fieldset {
+    border: none;
+    border-bottom: 1px solid #dde3e8;
+    padding: 15px 0;
+    margin: 0;
+}
+
+legend {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00796b;
+    padding: 15px 0 5px;
+}
+
+/* ===== Поля: на компьютере по два в строке ===== */
+.fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.fields .field {
+    width: 48%;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+/* Подпись над полем */
+.field label {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+input[type="url"],
+select,
+textarea {
+    padding: 9px 10px;
+    border: 1px solid #b0bec5;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: inherit;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #00796b;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* На компьютере подписи в label, поэтому placeholder прячем */
+input::placeholder,
+textarea::placeholder {
+    color: transparent;
+}
+
+/* Чекбоксы и радиокнопки */
+.group-title {
+    margin: 5px 0 8px;
+    font-size: 13px;
+    color: #555;
+}
+
+.checks {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.checks label {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.range-box {
+    display: flex;
+    align-items: center;
+}
+
+.range-box input {
+    width: 250px;
+}
+
+.range-box output {
+    margin-left: 10px;
+    font-weight: bold;
+    color: #00796b;
+}
+
+.agree {
+    display: block;
+    font-size: 14px;
+}
+
+/* Кнопки */
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+}
+
+button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.btn-main {
+    background-color: #00796b;
+    color: #ffffff;
+}
+
+.btn-main:hover {
+    background-color: #004d40;
+}
+
+.btn-gray {
+    background-color: #cfd8dc;
+}
+
+
+/* ===== Мобильная версия ===== */
+@media (max-width: 767px) {
+
+    body {
+        padding: 0;
+    }
+
+    .card {
+        border-radius: 0;
+    }
+
+    .card-head,
+    .card-body {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .card-head h1 {
+        font-size: 22px;
+    }
+
+    /* Поля друг под другом */
+    .fields .field {
+        width: 100%;
+    }
+
+    /* label прячем, подпись теперь внутри поля (placeholder) */
+    .field label {
+        display: none;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: #888;
+    }
+
+    /* У date, file и range нет placeholder, поэтому подпись для них оставляем */
+    .field label[for="birth"],
+    .field label[for="start"],
+    .field label[for="resume"] {
+        display: block;
+    }
+
+    .checks {
+        flex-direction: column;
+    }
+
+    .range-box input {
+        width: 100%;
+    }
+
+    /* Кнопки на всю ширину */
+    .buttons {
+        flex-direction: column-reverse;
+    }
+
+    button {
+        width: 100%;
+        margin: 0 0 10px;
+    }
+}

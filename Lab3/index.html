@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета соискателя — разработчик C++</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+    <div class="card-head">
+        <h1>Анкета соискателя</h1>
+        <p>Вакансия: <b>разработчик C++</b></p>
+    </div>
+
+    <form class="card-body" action="#" method="post" enctype="multipart/form-data">
+
+        <!-- ===== Блок 1. Контакты ===== -->
+        <fieldset>
+            <legend>1. Контактные данные</legend>
+
+            <div class="fields">
+                <div class="field">
+                    <label for="last-name">Фамилия</label>
+                    <input type="text" id="last-name" name="last_name" placeholder="Фамилия" required>
+                </div>
+                <div class="field">
+                    <label for="first-name">Имя</label>
+                    <input type="text" id="first-name" name="first_name" placeholder="Имя" required>
+                </div>
+                <div class="field">
+                    <label for="email">Электронная почта</label>
+                    <input type="email" id="email" name="email" placeholder="Электронная почта" required>
+                </div>
+                <div class="field">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Телефон" required>
+                </div>
+                <div class="field">
+                    <label for="birth">Дата рождения</label>
+                    <input type="date" id="birth" name="birth" title="Дата рождения">
+                </div>
+                <div class="field">
+                    <label for="city">Город</label>
+                    <input type="text" id="city" name="city" list="cities" placeholder="Город">
+                    <datalist id="cities">
+                        <option value="Красноярск">
+                        <option value="Новосибирск">
+                        <option value="Москва">
+                        <option value="Санкт-Петербург">
+                    </datalist>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- ===== Блок 2. Опыт ===== -->
+        <fieldset>
+            <legend>2. Опыт и навыки</legend>
+
+            <div class="fields">
+                <div class="field">
+                    <label for="level">Уровень</label>
+                    <select id="level" name="level">
+                        <option value="" disabled selected>Уровень</option>
+                        <option value="intern">Стажёр</option>
+                        <option value="junior">Junior</option>
+                        <option value="middle">Middle</option>
+                        <option value="senior">Senior</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="years">Опыт работы на C++ (лет)</label>
+                    <input type="number" id="years" name="years" min="0" max="40" placeholder="Опыт на C++ (лет)">
+                </div>
+                <div class="field">
+                    <label for="standard">Последний стандарт, с которым работали</label>
+                    <select id="standard" name="standard">
+                        <option value="" disabled selected>Стандарт C++</option>
+                        <optgroup label="Старые">
+                            <option>C++98</option>
+                            <option>C++03</option>
+                        </optgroup>
+                        <optgroup label="Современные">
+                            <option>C++11</option>
+                            <option>C++14</option>
+                            <option>C++17</option>
+                            <option>C++20</option>
+                            <option>C++23</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="github">Ссылка на GitHub</label>
+                    <input type="url" id="github" name="github" placeholder="Ссылка на GitHub">
+                </div>
+            </div>
+
+            <p class="group-title">Какие технологии знаете?</p>
+            <div class="checks">
+                <label><input type="checkbox" name="tech" value="stl"> STL</label>
+                <label><input type="checkbox" name="tech" value="qt"> Qt</label>
+                <label><input type="checkbox" name="tech" value="boost"> Boost</label>
+                <label><input type="checkbox" name="tech" value="cmake"> CMake</label>
+                <label><input type="checkbox" name="tech" value="linux"> Linux</label>
+                <label><input type="checkbox" name="tech" value="git"> Git</label>
+            </div>
+
+            <p class="group-title">Оцените своё знание C++ (от 1 до 10)</p>
+            <div class="range-box">
+                <input type="range" id="skill" name="skill" min="1" max="10" value="5"
+                       oninput="skillValue.value = this.value">
+                <output id="skillValue" for="skill">5</output>
+            </div>
+        </fieldset>
+
+        <!-- ===== Блок 3. Условия ===== -->
+        <fieldset>
+            <legend>3. Условия работы</legend>
+
+            <p class="group-title">Формат работы</p>
+            <div class="checks">
+                <label><input type="radio" name="format" value="office" checked> В офисе</label>
+                <label><input type="radio" name="format" value="remote"> Удалённо</label>
+                <label><input type="radio" name="format" value="hybrid"> Гибрид</label>
+            </div>
+
+            <div class="fields">
+                <div class="field">
+                    <label for="salary">Желаемая зарплата (руб.)</label>
+                    <input type="number" id="salary" name="salary" step="5000" placeholder="Желаемая зарплата (руб.)">
+                </div>
+                <div class="field">
+                    <label for="start">Когда готовы выйти на работу</label>
+                    <input type="date" id="start" name="start" title="Дата выхода на работу">
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="resume">Резюме (PDF)</label>
+                <input type="file" id="resume" name="resume" accept=".pdf">
+            </div>
+
+            <div class="field">
+                <label for="about">О себе</label>
+                <textarea id="about" name="about" rows="5" placeholder="Расскажите о себе и своих проектах"></textarea>
+            </div>
+
+            <label class="agree">
+                <input type="checkbox" name="agree" required>
+                Согласен на обработку персональных данных
+            </label>
+        </fieldset>
+
+        <div class="buttons">
+            <button type="reset" class="btn-gray">Очистить</button>
+            <button type="submit" class="btn-main">Отправить анкету</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
