@@ -1,10 +1,10 @@
-/* Шрифт для заголовков подключаем из папки fonts */
+
 @font-face {
     font-family: "RubikMono";
     src: url("../fonts/RubikMonoOne-Regular.ttf") format("truetype");
 }
 
-/* ===== Общие стили ===== */
+
 body {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 14px;
@@ -62,14 +62,14 @@ a:hover {
     word-spacing: 4px;
 }
 
-/* ===== Основной блок ===== */
+
 .page {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Содержание */
+
 .menu {
     background-color: #ffffff;
     border-left: 6px solid #00599c;
@@ -95,7 +95,7 @@ p {
     text-indent: 25px;
 }
 
-/* ===== Картинки ===== */
+
 .pic-left {
     float: left;
     margin: 0 20px 10px 0;
@@ -122,7 +122,7 @@ figcaption {
     color: #777;
 }
 
-/* ===== Цитата ===== */
+
 blockquote {
     background-color: #fff8e1;
     border-left: 4px solid #f0b400;
@@ -136,7 +136,7 @@ cite {
     text-align: right;
 }
 
-/* ===== Таблица ===== */
+
 .versions {
     width: 100%;
     border-collapse: collapse;
@@ -172,7 +172,7 @@ cite {
     text-align: right;
 }
 
-/* ===== Списки ===== */
+
 ol {
     list-style-type: upper-roman;
 }
@@ -213,7 +213,7 @@ mark {
     background-color: #ffe082;
 }
 
-/* ===== Код с подсветкой (как тема Dark+ в VS Code) ===== */
+
 .code {
     background-color: #1e1e1e;
     color: #d4d4d4;
@@ -241,7 +241,7 @@ mark {
     text-indent: 0;
 }
 
-/* Список тегов и свойств в конце */
+
 .list-used {
     list-style: none;
     padding-left: 0;
@@ -257,7 +257,7 @@ hr {
     margin: 30px 0;
 }
 
-/* ===== Подвал ===== */
+
 .bottom {
     background-color: #2b2b2b;
     color: #cccccc;
