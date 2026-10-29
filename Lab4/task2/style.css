@@ -8,13 +8,11 @@ body {
     font-family: "Courier New", monospace;
 }
 
-/* Корпус часов */
 .clock {
     background-color: #333333;
     padding: 25px 30px 10px;
     border-radius: 15px;
     border: 3px solid #555555;
-    /* плавное изменение при наведении */
     transition: transform 0.5s, border-color 0.5s;
 }
 
@@ -23,7 +21,6 @@ body {
     border-color: #00e676;
 }
 
-/* Экран */
 .screen {
     display: flex;
     background-color: #000000;
@@ -31,14 +28,12 @@ body {
     border-radius: 8px;
 }
 
-/* Окошко для одной цифры: видна только одна строка ленты */
 .digit {
     width: 50px;
     height: 80px;
     overflow: hidden;
 }
 
-/* Лента с цифрами */
 .strip span {
     display: block;
     height: 80px;
@@ -50,7 +45,6 @@ body {
     text-shadow: 0 0 10px #00e676;
 }
 
-/* Одна анимация для всех лент: сдвиг ленты вверх на всю её высоту */
 @keyframes roll {
     from {
         transform: translateY(0);
@@ -60,7 +54,6 @@ body {
     }
 }
 
-/* steps(N) - лента двигается рывками, N = сколько цифр на ленте */
 .sec-units {
     animation: roll 10s steps(10) infinite;
 }
@@ -81,7 +74,6 @@ body {
     animation: roll 86400s steps(24) infinite;
 }
 
-/* Двоеточие мигает раз в секунду */
 .colon {
     height: 80px;
     line-height: 75px;
