@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab4. Электронные часы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--
+    Как работают часы:
+    каждая цифра — это "окошко" высотой в одну цифру (.digit),
+    внутри него лента со всеми цифрами подряд (.strip).
+    Анимация двигает ленту вверх рывками (steps),
+    поэтому в окошке по очереди появляются 0, 1, 2 ...
+-->
+<div class="clock">
+    <div class="screen">
+
+        <!-- Часы: лента из 24 значений (00..23) -->
+        <div class="digit">
+            <div class="strip hours">
+                <span>0</span><span>0</span><span>0</span><span>0</span><span>0</span>
+                <span>0</span><span>0</span><span>0</span><span>0</span><span>0</span>
+                <span>1</span><span>1</span><span>1</span><span>1</span><span>1</span>
+                <span>1</span><span>1</span><span>1</span><span>1</span><span>1</span>
+                <span>2</span><span>2</span><span>2</span><span>2</span>
+            </div>
+        </div>
+        <div class="digit">
+            <div class="strip hours">
+                <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+                <span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+                <span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                <span>0</span><span>1</span><span>2</span><span>3</span>
+            </div>
+        </div>
+
+        <div class="colon">:</div>
+
+        <!-- Минуты -->
+        <div class="digit">
+            <div class="strip min-tens">
+                <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+            </div>
+        </div>
+        <div class="digit">
+            <div class="strip min-units">
+                <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+                <span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+            </div>
+        </div>
+
+        <div class="colon">:</div>
+
+        <!-- Секунды -->
+        <div class="digit">
+            <div class="strip sec-tens">
+                <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+            </div>
+        </div>
+        <div class="digit">
+            <div class="strip sec-units">
+                <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+                <span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+            </div>
+        </div>
+
+    </div>
+    <p class="caption">Наведите мышку на часы</p>
+</div>
+
+<script>
+    // Анимации считают время с полуночи.
+    // Отрицательная задержка "перематывает" анимацию на текущее время,
+    // поэтому часы сразу показывают правильное время.
+    var now = new Date();
+    var seconds = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+    var strips = document.querySelectorAll(".strip");
+    for (var i = 0; i < strips.length; i++) {
+        strips[i].style.animationDelay = "-" + seconds + "s";
+    }
+</script>
+
+</body>
+</html>

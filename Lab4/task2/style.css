@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c1c1c;
+    font-family: "Courier New", monospace;
+}
+
+/* Корпус часов */
+.clock {
+    background-color: #333333;
+    padding: 25px 30px 10px;
+    border-radius: 15px;
+    border: 3px solid #555555;
+    /* плавное изменение при наведении */
+    transition: transform 0.5s, border-color 0.5s;
+}
+
+.clock:hover {
+    transform: scale(1.1) rotate(-2deg);
+    border-color: #00e676;
+}
+
+/* Экран */
+.screen {
+    display: flex;
+    background-color: #000000;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+/* Окошко для одной цифры: видна только одна строка ленты */
+.digit {
+    width: 50px;
+    height: 80px;
+    overflow: hidden;
+}
+
+/* Лента с цифрами */
+.strip span {
+    display: block;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+    color: #00e676;
+    text-shadow: 0 0 10px #00e676;
+}
+
+/* Одна анимация для всех лент: сдвиг ленты вверх на всю её высоту */
+@keyframes roll {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+/* steps(N) - лента двигается рывками, N = сколько цифр на ленте */
+.sec-units {
+    animation: roll 10s steps(10) infinite;
+}
+
+.sec-tens {
+    animation: roll 60s steps(6) infinite;
+}
+
+.min-units {
+    animation: roll 600s steps(10) infinite;
+}
+
+.min-tens {
+    animation: roll 3600s steps(6) infinite;
+}
+
+.hours {
+    animation: roll 86400s steps(24) infinite;
+}
+
+/* Двоеточие мигает раз в секунду */
+.colon {
+    height: 80px;
+    line-height: 75px;
+    font-size: 60px;
+    color: #00e676;
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.caption {
+    text-align: center;
+    color: #888888;
+    font-size: 13px;
+}

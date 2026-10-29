@@ -1,0 +1,208 @@
+body {
+    margin: 0;
+    background-color: #05051a;
+}
+
+/* Сцена: все детали ставим через position: absolute относительно неё */
+.space {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: 30px auto;
+    background-color: #0b0b2e;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* ===== Звёзды ===== */
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+.s1 { top: 40px;  left: 60px; }
+.s2 { top: 90px;  left: 500px; }
+.s3 { top: 150px; left: 150px; width: 6px; height: 6px; }
+.s4 { top: 260px; left: 540px; }
+.s5 { top: 380px; left: 80px; width: 6px; height: 6px; }
+.s6 { top: 470px; left: 470px; }
+.s7 { top: 540px; left: 200px; }
+.s8 { top: 30px;  left: 330px; }
+
+/* ===== Планета с кольцом ===== */
+.planet {
+    position: absolute;
+    top: 60px;
+    left: 420px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: #e67e22;
+    box-shadow: inset -20px -10px 0 #b9581a;
+}
+
+.ring {
+    position: absolute;
+    top: 40px;
+    left: -30px;
+    width: 160px;
+    height: 30px;
+    border: 5px solid #f5cba7;
+    border-radius: 50%;
+    transform: rotate(-20deg);
+}
+
+/* ===== Луна ===== */
+.moon {
+    position: absolute;
+    top: 430px;
+    left: 30px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #bdc3c7;
+}
+
+.crater {
+    position: absolute;
+    background-color: #95a5a6;
+    border-radius: 50%;
+}
+.c1 { top: 20px; left: 25px; width: 20px; height: 20px; }
+.c2 { top: 50px; left: 50px; width: 14px; height: 14px; }
+
+/* ===== Корабль (наклонён вправо) ===== */
+.ship {
+    position: absolute;
+    top: 110px;
+    left: 230px;
+    width: 140px;
+    height: 400px;
+    transform: rotate(20deg);
+}
+
+/* Нос: верх скруглён сильно, низ прямой */
+.nose {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width: 80px;
+    height: 90px;
+    background-color: #e74c3c;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+/* Корпус */
+.body {
+    position: absolute;
+    top: 90px;
+    left: 30px;
+    width: 80px;
+    height: 180px;
+    background-color: #ecf0f1;
+    box-shadow: inset -12px 0 0 #bdc3c7;
+}
+
+/* Иллюминатор */
+.window {
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #5dade2;
+    border: 5px solid #7f8c8d;
+    box-sizing: border-box;
+}
+
+.stripe {
+    position: absolute;
+    top: 85px;
+    left: 0;
+    width: 80px;
+    height: 12px;
+    background-color: #e74c3c;
+}
+
+.label {
+    position: absolute;
+    top: 115px;
+    left: 0;
+    width: 80px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+/* Крылья: треугольники из рамок */
+.fin {
+    position: absolute;
+    top: 190px;
+    width: 0;
+    height: 0;
+    border-bottom: 90px solid #c0392b;
+}
+
+.fin-left {
+    left: -10px;
+    border-left: 40px solid transparent;
+}
+
+.fin-right {
+    left: 110px;
+    border-right: 40px solid transparent;
+}
+
+/* Средний стабилизатор */
+.fin-middle {
+    position: absolute;
+    top: 230px;
+    left: 64px;
+    width: 12px;
+    height: 60px;
+    background-color: #c0392b;
+    border-radius: 6px;
+}
+
+/* Сопло */
+.nozzle {
+    position: absolute;
+    top: 270px;
+    left: 45px;
+    width: 50px;
+    height: 20px;
+    background-color: #7f8c8d;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Огонь: два треугольника вершиной вниз */
+.fire {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+.fire-big {
+    top: 290px;
+    left: 45px;
+    border-left-width: 25px;
+    border-right-width: 25px;
+    border-top: 90px solid #f39c12;
+}
+
+.fire-small {
+    top: 290px;
+    left: 57px;
+    border-left-width: 13px;
+    border-right-width: 13px;
+    border-top: 50px solid #f9e79f;
+}
