@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab5. Основы JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Лабораторная работа №5 — JavaScript</h1>
+<p class="note">Вариант 3. Ответы показываются в рамке под заданием и дублируются в консоль (F12).</p>
+
+<!-- ===== Задание 1 ===== -->
+<div class="task">
+    <h2>Задание 1. Ссуда в банке</h2>
+    <p>
+        Бизнесмен взял ссуду <b>M</b> тысяч рублей под 20% годовых. Через сколько лет его долг
+        превысит <b>S</b> тысяч рублей, если он не будет отдавать долг?
+    </p>
+    <div class="inputs">
+        <label>M = <input type="number" id="loan" value="100"></label>
+        <label>S = <input type="number" id="limit" value="500"></label>
+        <button id="btn-task1">Посчитать</button>
+    </div>
+    <pre class="answer" id="answer1"></pre>
+</div>
+
+<!-- ===== Задание 2 ===== -->
+<div class="task">
+    <h2>Задание 2. Обработка массива</h2>
+    <p>
+        <b>Часть А</b> (без методов Array): сумма элементов массива от последнего элемента,
+        у которого синус отрицательный, до конца массива.
+    </p>
+    <p>
+        <b>Часть Б</b> (с методами Array): удалить элементы, у которых модуль целой части —
+        число, все цифры которого простые (2, 3, 5, 7).
+    </p>
+    <div class="inputs">
+        <label>Массив через запятую:
+            <input type="text" id="numbers" class="wide" value="12.5, 4, -27.3, 3.5, 1, 235.9, 8, -0.7, 57, 2.2">
+        </label>
+        <button id="btn-task2">Обработать</button>
+    </div>
+    <pre class="answer" id="answer2"></pre>
+</div>
+
+<!-- ===== Задание 4 ===== -->
+<div class="task">
+    <h2>Задание 4. Папки в пути к файлу</h2>
+    <p>Дан полный путь к файлу. Вывести все названия папок, которые входят в этот путь.</p>
+    <div class="inputs">
+        <label>Путь:
+            <input type="text" id="path" class="wide" value="C:\Users\Sultan\Documents\Labs\Lab5\script.js">
+        </label>
+        <button id="btn-task4">Найти папки</button>
+    </div>
+    <pre class="answer" id="answer4"></pre>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
