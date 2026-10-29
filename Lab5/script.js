@@ -1,13 +1,10 @@
-// Вывод ответа: и на страницу, и в консоль
+
 function showAnswer(id, text) {
     document.getElementById(id).textContent = text;
     console.log(text);
 }
 
 
-/* ==================== Задание 1 ==================== */
-// Каждый год долг увеличивается на 20%, то есть умножается на 1.2.
-// Считаем годы, пока долг не станет больше S.
 function countYears(m, s) {
     let debt = m;
     let years = 0;
@@ -36,11 +33,7 @@ function task1() {
 }
 
 
-/* ==================== Задание 2 ==================== */
-
-// Часть А. Методы массива не используем, только циклы.
 function sumFromLastNegativeSin(arr) {
-    // ищем последний элемент с отрицательным синусом (идём с конца)
     let index = -1;
     for (let i = arr.length - 1; i >= 0; i--) {
         if (Math.sin(arr[i]) < 0) {
@@ -53,7 +46,6 @@ function sumFromLastNegativeSin(arr) {
         return null; // таких элементов нет
     }
 
-    // складываем от найденного элемента до конца
     let sum = 0;
     for (let i = index; i < arr.length; i++) {
         sum = sum + arr[i];
@@ -61,7 +53,6 @@ function sumFromLastNegativeSin(arr) {
     return { index: index, sum: sum };
 }
 
-// Проверка для части Б: все ли цифры числа простые (2, 3, 5, 7)
 function allDigitsPrime(n) {
     let digits = String(n);
     for (let i = 0; i < digits.length; i++) {
@@ -73,8 +64,7 @@ function allDigitsPrime(n) {
     return true;
 }
 
-// Часть Б. Используем метод filter: оставляем только те элементы,
-// у которых НЕ все цифры целой части простые
+
 function removePrimeDigitNumbers(arr) {
     return arr.filter(function (x) {
         let whole = Math.abs(Math.trunc(x));
@@ -104,9 +94,6 @@ function task2() {
 }
 
 
-/* ==================== Задание 4 ==================== */
-// Делим путь по слешам (\ или /). Последняя часть - имя файла, её не берём.
-// Имя диска (например "C:") тоже не папка.
 function getFolders(path) {
     let parts = path.split(/[\\/]/);
     let folders = [];
@@ -138,7 +125,6 @@ function task4() {
 }
 
 
-// Подключаем кнопки
 document.getElementById("btn-task1").addEventListener("click", task1);
 document.getElementById("btn-task2").addEventListener("click", task2);
 document.getElementById("btn-task4").addEventListener("click", task4);
