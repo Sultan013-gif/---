@@ -3,7 +3,6 @@ body {
     background-color: #05051a;
 }
 
-/* Сцена: все детали ставим через position: absolute относительно неё */
 .space {
     position: relative;
     width: 600px;
@@ -14,7 +13,6 @@ body {
     overflow: hidden;
 }
 
-/* ===== Звёзды ===== */
 .star {
     position: absolute;
     width: 4px;
@@ -31,7 +29,7 @@ body {
 .s7 { top: 540px; left: 200px; }
 .s8 { top: 30px;  left: 330px; }
 
-/* ===== Планета с кольцом ===== */
+
 .planet {
     position: absolute;
     top: 60px;
@@ -54,7 +52,6 @@ body {
     transform: rotate(-20deg);
 }
 
-/* ===== Луна ===== */
 .moon {
     position: absolute;
     top: 430px;
@@ -73,7 +70,6 @@ body {
 .c1 { top: 20px; left: 25px; width: 20px; height: 20px; }
 .c2 { top: 50px; left: 50px; width: 14px; height: 14px; }
 
-/* ===== Корабль (наклонён вправо) ===== */
 .ship {
     position: absolute;
     top: 110px;
@@ -83,7 +79,6 @@ body {
     transform: rotate(20deg);
 }
 
-/* Нос: верх скруглён сильно, низ прямой */
 .nose {
     position: absolute;
     top: 0;
@@ -94,7 +89,6 @@ body {
     border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 }
 
-/* Корпус */
 .body {
     position: absolute;
     top: 90px;
@@ -105,7 +99,6 @@ body {
     box-shadow: inset -12px 0 0 #bdc3c7;
 }
 
-/* Иллюминатор */
 .window {
     position: absolute;
     top: 20px;
@@ -139,7 +132,6 @@ body {
     color: #2c3e50;
 }
 
-/* Крылья: треугольники из рамок */
 .fin {
     position: absolute;
     top: 190px;
@@ -158,7 +150,6 @@ body {
     border-right: 40px solid transparent;
 }
 
-/* Средний стабилизатор */
 .fin-middle {
     position: absolute;
     top: 230px;
@@ -169,7 +160,6 @@ body {
     border-radius: 6px;
 }
 
-/* Сопло */
 .nozzle {
     position: absolute;
     top: 270px;
@@ -180,7 +170,6 @@ body {
     border-radius: 0 0 10px 10px;
 }
 
-/* Огонь: два треугольника вершиной вниз */
 .fire {
     position: absolute;
     width: 0;
